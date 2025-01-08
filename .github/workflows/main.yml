@@ -1,0 +1,30 @@
+name: Deploy to Azure
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }} 
+
+    - name: Install Terraform
+      uses: hashicorp/setup-terraform@v2
+
+    - name: Initialize Terraform
+      run: |
+        terraform init -backend-config="path=./terraform.tfstate"
+
+    - name: Plan Terraform
+      run: terraform plan -out=tfplan
+
+    - name: Apply Terraform
+      run: terraform apply -auto-approve tfplan
