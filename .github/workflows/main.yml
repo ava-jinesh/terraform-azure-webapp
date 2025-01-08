@@ -1,8 +1,8 @@
 name: Deploy to Azure
 
 on:
-  push:
-    branches: [ "main" ]
+  push: none
+    # branches: [ "main" ]
 
 jobs:
   deploy:
@@ -19,14 +19,14 @@ jobs:
     - name: Install Terraform
       uses: hashicorp/setup-terraform@v2
 
-    - name: Change to Terraform Directory 
-      run: cd terraform 
+    - name: Change to Terraform Directory
+      run: cd modules/app_service
 
     - name: Initialize Terraform
-      run: terraform init -backend-config="path=./terraform.tfstate"
+      run: terraform init -backend-config="path=../../terraform.tfstate"
       
     - name: Plan Terraform
       run: terraform plan -out=tfplan
-
+    
     - name: Apply Terraform
       run: terraform apply -auto-approve tfplan
