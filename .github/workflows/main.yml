@@ -19,13 +19,16 @@ jobs:
       uses: hashicorp/setup-terraform@v2
 
     - name: Change to Terraform Directory
-      run: cd modules/app_service
+      run: cd terraform
 
     - name: Initialize Terraform
-      run: terraform init -backend-config="path=../../terraform.tfstate"
-      
+      working-directory: terraform
+      run: terraform init -backend-config="path=../terraform.tfstate"
+
     - name: Plan Terraform
+      working-directory: terraform
       run: terraform plan -out=tfplan
-    
+
     - name: Apply Terraform
+      working-directory: terraform
       run: terraform apply -auto-approve tfplan
