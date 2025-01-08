@@ -2,7 +2,11 @@ name: Deploy to Azure
 
 on:
   workflow_dispatch:
-
+    inputs:
+      environment:
+        description: "Environment to deploy (dev or prod)"
+        required: true
+        default: "dev"
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -27,7 +31,7 @@ jobs:
 
     - name: Plan Terraform
       working-directory: terraform
-      run: terraform plan -out=tfplan
+      run: terraform plan -var-file=${{ env.TFVARS_FILE }} -out=tfplan
 
     - name: Apply Terraform
       working-directory: terraform
