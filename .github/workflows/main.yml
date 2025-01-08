@@ -1,8 +1,7 @@
 name: Deploy to Azure
 
 on:
-  push: none
-    # branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   deploy:
