@@ -12,3 +12,9 @@ variable "app_service_name" {
   type        = string
   description = "Name of the App Service"
 }
+
+
+variable "app_service_plan_name" {
+  type        = string
+  description = "Name of the App Service Plan"
+}

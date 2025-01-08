@@ -21,4 +21,6 @@ module "app_service" {
   app_service_name    = var.app_service_name
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name 
+  app_service_plan_name = var.app_service_plan_name
 }
+
