@@ -23,7 +23,7 @@ jobs:
       uses: hashicorp/setup-terraform@v2
       
     - name: Set Environment Variable
-      run: echo "TFVARS_FILE=environments/${{ github.event.inputs.environment }}/variables.tfvars" >> $GITHUB_ENV
+      run: echo "TFVARS_FILE=envrionments/${{ github.event.inputs.environment }}/variables.tfvars" >> $GITHUB_ENV
 
     - name: Change to Terraform Directory
       run: cd terraform
