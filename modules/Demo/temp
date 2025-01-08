@@ -1,0 +1,5 @@
+variable "sku_tier" {
+type        = string
+description = "SKU Tier for the App Service Plan (e.g., 'Free')"
+default     = "Free"
+}

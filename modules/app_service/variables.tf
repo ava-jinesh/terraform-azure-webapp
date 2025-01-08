@@ -1,7 +1,13 @@
-variable "app_service_name" {
+variable "app_service_plan_name" {
   type        = string
-  description = "Name of the App Service"
+  description = "Name of the App Service Plan"
 }
+
+variable "azurerm_linux_web_appme" {
+  type        = string
+  description = "Name of the App Service Plan"
+}
+
 
 variable "location" {
   type        = string
@@ -13,19 +19,14 @@ variable "resource_group_name" {
   description = "Name of the Resource Group"
 }
 
-variable "app_service_plan_name" {
+variable "sku_name" {
   type        = string
-  description = "Name of the App Service Plan"
+  description = "Custom name for the App Service Plan SKU (optional)"
+  default     = "B1"
 }
 
-variable "sku_tier" {
-  type        = string
-  description = "SKU Tier for the App Service Plan (e.g., 'Standard')"
-  default     = "Standard"
-}
 
-variable "sku_size" {
-  type        = string
-  description = "SKU Size for the App Service Plan (e.g., 'S1')"
-  default     = "S1"
-}
+
+
+
+
