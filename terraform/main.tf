@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "example" {
 
 
 module "app_service_plan" {
-  source  = "./modules/app_service" 
+  source  = "../modules/app_service" 
   name    = "my-app-service-plan" 
   location = "eastus2" 
   
