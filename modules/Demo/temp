@@ -3,3 +3,10 @@ type        = string
 description = "SKU Tier for the App Service Plan (e.g., 'Free')"
 default     = "Free"
 }
+
+
+variable "sku_size" {
+  type        = string
+  description = "SKU Size for the App Service Plan (e.g., 'F1')"
+  default     = "F1"
+}
