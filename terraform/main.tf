@@ -17,3 +17,9 @@ resource "azurerm_resource_group" "example" {
 }
 
 
+module "app_service_plan" {
+  source  = "./modules/azure_app_service_plan" 
+  name    = "my-app-service-plan" 
+  location = "eastus2" 
+  
+}
