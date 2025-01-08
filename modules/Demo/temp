@@ -41,3 +41,8 @@ variable "service_plan_name" {
   type        = string
   description = "Name of the App Service Plan"
 }
+
+
+output "app_service_endpoint" {
+  value = module.app_service.app_service_endpoint
+}
