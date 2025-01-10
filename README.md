@@ -30,6 +30,7 @@ terraform-azure-webapp/
 
 Need 
 
+'''
 AZURE_CREDENTIALS as a Secret for Action for this pipeline to Authenticate and run. 
 
 {
@@ -38,3 +39,5 @@ AZURE_CREDENTIALS as a Secret for Action for this pipeline to Authenticate and r
   "subscriptionId": "<Your Azure Subscription ID>",
   "tenantId": "<Your Azure Tenant ID>"
 }
+
+'''
