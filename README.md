@@ -27,3 +27,14 @@ terraform-azure-webapp/
 └── .gitignore
 
 ```
+
+Need 
+
+AZURE_CREDENTIALS as a Secret for Action for this pipeline to Authenticate and run. 
+
+{
+  "clientId": "<Application (client) ID>",
+  "clientSecret": "<Client Secret>",
+  "subscriptionId": "<Your Azure Subscription ID>",
+  "tenantId": "<Your Azure Tenant ID>"
+}
